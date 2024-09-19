@@ -47,3 +47,16 @@ fig_box_amount.write_image("../output/Transaction_amount_vs_Account_type.png")
 # Also, both the account types exhibit a similar interquartile range (IQR), meaning that the majority of transactions fall within the range 950 to 1050 for both Savings and Current accounts.
 # Both Savings and Current accounts have a notable number of outliers with transaction amounts exceeding 2500. These high-value transactions are infrequent but can be seen in both types of accounts.
 # These outliers may indicate high-spending customers or potentially anomalous behavior that warrants further investigation. 
+
+# Average Transaction Amount by Age
+
+fig_scatter_amount = px.scatter(data,
+                                x = "Age",
+                                y = "Average_Transaction_Amount",
+                                color = "Account_Type",
+                                title = "Average Transaction Amount by Age",
+                                trendline="ols")
+
+fig_scatter_amount.show()
+
+fig_scatter_amount.write_image("../output/Average_Transaction_amount_by_Age.png")
