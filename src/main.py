@@ -33,3 +33,16 @@ fig_amount.write_image("../output/Transaction_Amount_Distribution.png")
 
 #Transaction Amount vs Account Type
 
+fig_box_amount = px.box(data,
+                        x = 'Account_Type',
+                        y = 'Transaction_Amount',
+                        title = 'Transaction Amount vs Account Type')
+
+fig_box_amount.show()
+
+fig_box_amount.write_image("../output/Transaction_amount_vs_Account_type.png")
+
+#COMMENTS:
+# 
+# 
+# 
