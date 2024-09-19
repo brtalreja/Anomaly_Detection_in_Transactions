@@ -43,6 +43,7 @@ fig_box_amount.show()
 fig_box_amount.write_image("../output/Transaction_amount_vs_Account_type.png")
 
 #COMMENTS:
-# 
-# 
-# 
+# The median transaction amount for both Savings and Current account types appears to be around 1000.
+# Also, both the account types exhibit a similar interquartile range (IQR), meaning that the majority of transactions fall within the range 950 to 1050 for both Savings and Current accounts.
+# Both Savings and Current accounts have a notable number of outliers with transaction amounts exceeding 2500. These high-value transactions are infrequent but can be seen in both types of accounts.
+# These outliers may indicate high-spending customers or potentially anomalous behavior that warrants further investigation. 
