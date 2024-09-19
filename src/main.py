@@ -60,3 +60,9 @@ fig_scatter_amount = px.scatter(data,
 fig_scatter_amount.show()
 
 fig_scatter_amount.write_image("../output/Average_Transaction_amount_by_Age.png")
+
+#COMMENTS:
+# There is no significant increase or decrease in the average transaction amount as age progresses, indicating that age may not be a primary determinant of how much individuals are transacting on average.
+# Both savings and current accounts display a similar range of average transaction amounts, suggesting that account type does not drastically affect average spending behavior.
+# There are a few outliers at the lower end of the transaction amounts for older individuals (age 60+) in both account types, indicating occasional lower transaction averages for this age group.
+# The trendline for both account types is relatively flat, thus concreting the observation that the average transaction amount does not show significant variation with age.
