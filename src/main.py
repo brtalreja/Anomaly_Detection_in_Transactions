@@ -66,3 +66,16 @@ fig_scatter_amount.write_image("../output/Average_Transaction_amount_by_Age.png"
 # Both savings and current accounts display a similar range of average transaction amounts, suggesting that account type does not drastically affect average spending behavior.
 # There are a few outliers at the lower end of the transaction amounts for older individuals (age 60+) in both account types, indicating occasional lower transaction averages for this age group.
 # The trendline for both account types is relatively flat, thus concreting the observation that the average transaction amount does not show significant variation with age.
+
+# Number of Transactions by the days of the week
+
+day_order = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+fig_bar_transactions = px.bar(data,
+                              x = "Day_of_Week",
+                              title = "Number of Transactions by the Day of the Week",
+                              category_orders={"Day_of_Week": day_order})
+
+fig_bar_transactions.show()
+
+fig_bar_transactions.write_image("../output/Number_of_transactions_by_Days.png")
