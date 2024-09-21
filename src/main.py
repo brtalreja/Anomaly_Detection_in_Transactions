@@ -79,3 +79,8 @@ fig_bar_transactions = px.bar(data,
 fig_bar_transactions.show()
 
 fig_bar_transactions.write_image("../output/Number_of_transactions_by_Days.png")
+
+#COMMENTS:
+#
+#
+#
