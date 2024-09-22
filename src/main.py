@@ -81,6 +81,7 @@ fig_bar_transactions.show()
 fig_bar_transactions.write_image("../output/Number_of_transactions_by_Days.png")
 
 #COMMENTS:
-#
-#
-#
+# Tuesday records the highest number of transactions, suggesting a possible trend in user behavior where more people engage in transactions early in the work week.
+# Both Monday and Saturday show a slightly lower number of transactions compared to the mid-week, which could indicate that customers engage less in financial transactions at the start of the week or during the weekend.
+# There is no significant drop-off or peak towards the end of the work week (Wednesday to Friday), which indicates a balanced distribution of transactional activity.
+
