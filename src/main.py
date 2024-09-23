@@ -85,3 +85,11 @@ fig_bar_transactions.write_image("../output/Number_of_transactions_by_Days.png")
 # Both Monday and Saturday show a slightly lower number of transactions compared to the mid-week, which could indicate that customers engage less in financial transactions at the start of the week or during the weekend.
 # There is no significant drop-off or peak towards the end of the work week (Wednesday to Friday), which indicates a balanced distribution of transactional activity.
 
+# Correlation Map
+
+numeric_data = data.select_dtypes(include=['float64', 'int64'])
+correlation_matrix = numeric_data.corr()
+fig_corr_map = px.imshow(correlation_matrix, title = "Correlation Heatmap")
+fig_corr_map.show()
+
+fig_corr_map.write_image("../output/correlation_heatmap.png")
