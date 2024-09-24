@@ -99,20 +99,20 @@ fig_corr_map.write_image("../output/correlation_heatmap.png")
 
 # Visualizing the anomalies
 
-mean_amount = data['Transaction_amount'].mean()
-std_amount = data['Tranaction_amount'].std()
+mean_amount = data['Transaction_Amount'].mean()
+std_amount = data['Transaction_Amount'].std()
 
 anomaly_thereshold = mean_amount + 2 * std_amount
 
-data['Is_Anomaly'] = data['Transaction_amount'] > anomaly_thereshold
+data['Is_Anomaly'] = data['Transaction_Amount'] > anomaly_thereshold
 
 fig_anomalies = px.scatter(data,
-                           x = "Transaction_amount",
+                           x = "Transaction_Amount",
                            y = "Average_Transaction_Amount",
                            color = "Is_Anomaly",
                            title = "Anomalies in the transaction data")
 
-fig_anomalies.update_traces(marker = dict(12),
+fig_anomalies.update_traces(marker = dict(size=12),
                             selector = dict(mode = 'markers', marker_size = 1))
 
 fig_anomalies.show()
