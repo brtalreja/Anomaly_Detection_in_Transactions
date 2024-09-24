@@ -93,3 +93,28 @@ fig_corr_map = px.imshow(correlation_matrix, title = "Correlation Heatmap")
 fig_corr_map.show()
 
 fig_corr_map.write_image("../output/correlation_heatmap.png")
+
+#COMMENTS:
+# No interesting results.
+
+# Visualizing the anomalies
+
+mean_amount = data['Transaction_amount'].mean()
+std_amount = data['Tranaction_amount'].std()
+
+anomaly_thereshold = mean_amount + 2 * std_amount
+
+data['Is_Anomaly'] = data['Transaction_amount'] > anomaly_thereshold
+
+fig_anomalies = px.scatter(data,
+                           x = "Transaction_amount",
+                           y = "Average_Transaction_Amount",
+                           color = "Is_Anomaly",
+                           title = "Anomalies in the transaction data")
+
+fig_anomalies.update_traces(marker = dict(12),
+                            selector = dict(mode = 'markers', marker_size = 1))
+
+fig_anomalies.show()
+
+fig_anomalies.write_image("../output/Anomalies_Transaction_Amount.png")
