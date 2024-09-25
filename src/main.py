@@ -118,3 +118,9 @@ fig_anomalies.update_traces(marker = dict(size=12),
 fig_anomalies.show()
 
 fig_anomalies.write_image("../output/Anomalies_Transaction_Amount.png")
+
+#COMMENTS:
+# Regular transactions tend to cluster around a 'Transaction_Amount' range of 900 to 1100, with corresponding 'Average_Transaction_Amount' values between 940 and 1080.
+# Anomalous transactions appear to have much higher 'Transaction_Amount' values, primarily ranging from 2000 to over 3000.
+# All detected anomalies exhibit significantly higher transaction amounts compared to the regular transactions.
+
