@@ -124,3 +124,23 @@ fig_anomalies.write_image("../output/Anomalies_Transaction_Amount.png")
 # Anomalous transactions appear to have much higher 'Transaction_Amount' values, primarily ranging from 2000 to over 3000.
 # All detected anomalies exhibit significantly higher transaction amounts compared to the regular transactions.
 
+# Anomaly ratio
+
+num_anomalies = data['Is_Anomaly'].sum()
+
+total_instances = data.shape[0]
+
+anomaly_ratio = num_anomalies/total_instances
+print(anomaly_ratio)
+
+# Customer Segmentation by Age and Income
+
+fig_age_income = px.scatter(data,
+                            x = "Age",
+                            y = "Transaction_Amount",
+                            color = "Income",
+                            title = "Customer Segmentation by Age and Income")
+
+fig_age_income.show()
+
+fig_age_income.write_image("../output/Customer_Segmentation_by_Age_and_Income.png")
