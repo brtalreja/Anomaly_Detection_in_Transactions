@@ -144,3 +144,26 @@ fig_age_income = px.scatter(data,
 fig_age_income.show()
 
 fig_age_income.write_image("../output/Customer_Segmentation_by_Age_and_Income.png")
+
+#COMMENTS:
+# A noticeable correlation between income and transaction amount can be observed as higher-income individuals contribute to higher transaction amounts.
+# Older customers (over 50 years) tend to be involved in a wider range of transaction amounts, including high-value transactions, with generally higher incomes.
+# Customers can be segmented by income levels to create personalized marketing strategies. For example: Premium offerings for high-income customers and discounted or entry-level products for lower-income customers.
+
+# Cummalative Transactions over Time
+
+data['cummalative_transactions'] = data['Transaction_Amount'].cumsum()
+
+fig_cumulative = px.line(data,
+                         x = "Time_of_Day",
+                         y = "cummalative_transactions",
+                         title = "Cummalative Transactions over Time")
+
+fig_cumulative.show()
+
+fig_cumulative.write_image("../output/Cummalative Transaction over Time.png")
+
+#COMMENTS:
+# 
+# 
+# 
