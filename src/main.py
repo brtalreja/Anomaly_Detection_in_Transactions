@@ -167,3 +167,12 @@ fig_cumulative.write_image("../output/Cummalative Transaction over Time.png")
 # 
 # 
 # 
+
+# Gender and Transaction Amount
+fig_gender = px.box(data,
+                    x='Gender',
+                    y='Transaction_Amount',
+                    title='Transaction Amount by Gender')
+fig_gender.show()
+
+fig_gender.write_image("../output/Gender_vs_Transaction_Amount.png")
