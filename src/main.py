@@ -153,24 +153,6 @@ fig_age_income.write_image("../output/Customer_Segmentation_by_Age_and_Income.pn
 # Older customers (over 50 years) tend to be involved in a wider range of transaction amounts, including high-value transactions, with generally higher incomes.
 # Customers can be segmented by income levels to create personalized marketing strategies. For example: Premium offerings for high-income customers and discounted or entry-level products for lower-income customers.
 
-# Cummalative Transactions over Time
-
-data['cummalative_transactions'] = data['Transaction_Amount'].cumsum()
-
-fig_cumulative = px.line(data,
-                         x = "Time_of_Day",
-                         y = "cummalative_transactions",
-                         title = "Cummalative Transactions over Time")
-
-fig_cumulative.show()
-
-fig_cumulative.write_image("../output/Cummalative Transaction over Time.png")
-
-#COMMENTS:
-# 
-# 
-# 
-
 # Gender and Transaction Amount
 fig_gender = px.box(data,
                     x='Gender',
@@ -179,6 +161,11 @@ fig_gender = px.box(data,
 fig_gender.show()
 
 fig_gender.write_image("../output/Gender_vs_Transaction_Amount.png")
+
+#COMMENTS:
+# There are slightly more high-value outliers visible for female customers than for male customers.
+# For both male and female customers, high-value transactions are relatively rare but present beyond the $2,500 mark.
+# Since both genders exhibit similar transaction behavior, a gender-neutral marketing strategy is appropriate.
 
 # Isolation Forest (Machine Learning Model)
 
