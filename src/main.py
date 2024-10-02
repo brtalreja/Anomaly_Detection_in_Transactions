@@ -196,3 +196,13 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # Train the Isolation Forest model
 model = IsolationForest(contamination=0.02, random_state=42)
 model.fit(X_train)
+
+# Predicting the anomalies
+y_pred = model.predict(X_test)
+
+# Predictions to binary values (Usually 1 is the target class and 0 is non-target class, so we do the same here: 1 is for anomoly, and 0 is for normal transaction)
+y_pred_binary = [1 if pred == -1 else 0 for pred in y_pred]
+
+# Evaluation
+report = classification_report(y_test, y_pred_binary, target_names=['Normal','Anomaly'])
+print(report)
