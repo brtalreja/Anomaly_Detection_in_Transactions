@@ -193,3 +193,22 @@ y_pred_binary = [1 if pred == -1 else 0 for pred in y_pred]
 # Evaluation
 report = classification_report(y_test, y_pred_binary, target_names=['Normal','Anomaly'])
 print(report)
+
+# Using the model to predict
+relevant_features = ['Transaction_Amount', 'Average_Transaction_Amount', 'Frequency_of_Transactions']
+
+user_inputs = []
+for feature in relevant_features:
+    user_input = float(input(f"Enter the value for '{feature}': "))
+    user_inputs.append(user_input)
+
+user_df = pd.DataFrame([user_inputs], columns=relevant_features)
+
+user_anomaly_pred = model.predict(user_df)
+
+user_anomaly_pred_binary = 1 if user_anomaly_pred == -1 else 0
+
+if user_anomaly_pred_binary == 1:
+    print("Anomaly detected: This transaction is flagged as an anomaly.")
+else:
+    print("No anomaly detected: This transaction is normal.")
