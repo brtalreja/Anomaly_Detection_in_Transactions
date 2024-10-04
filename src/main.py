@@ -4,6 +4,7 @@ import plotly.express as px
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import IsolationForest
 from sklearn.metrics import classification_report
+from sklearn.model_selection import GridSearchCV
 
 #Loading the data
 data = pd.read_csv("../data/transaction_anomalies_dataset.csv")
@@ -212,3 +213,28 @@ if user_anomaly_pred_binary == 1:
     print("Anomaly detected: This transaction is flagged as an anomaly.")
 else:
     print("No anomaly detected: This transaction is normal.")
+
+# Hyperparameter Tuning
+
+param_grid = {
+    'n_estimators': [50, 100, 200],
+    'max_samples': [0.6, 0.8, 1.0],
+    'contamination': [0.01, 0.02, 0.05]
+}
+
+isolation_forest = IsolationForest(random_state=42)
+
+grid_search = GridSearchCV(isolation_forest, param_grid, cv=5, scoring='f1_weighted', n_jobs=-1)
+grid_search.fit(X_train, y_train)
+
+best_params = grid_search.best_params_
+print(f"Best parameters: {best_params}")
+
+best_model = IsolationForest(**best_params, random_state=42)
+best_model.fit(X_train)
+
+y_pred = best_model.predict(X_test)
+y_pred_binary = [1 if pred == -1 else 0 for pred in y_pred]
+
+report = classification_report(y_test, y_pred_binary, target_names=['Normal','Anomaly'])
+print(report)
