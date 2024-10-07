@@ -6,11 +6,11 @@ This project focuses on detecting anomalies in transaction data to identify pote
 ## EDA (Exploratory Data Analysis)
 ### Transaction Amount Distribution: To identify the normal spending range and potential outliers
 
-![Transaction Amount Distribution](../output/Transaction_Amount_Distribution.png)
+![Transaction Amount Distribution](output/Transaction_Amount_Distribution.png)
 
 ### Transaction Amount vs Account Type: To compare transaction amounts across `Savings` and `Current` accounts.
 
-![Transaction Amount vs Account Type](../output/Transaction_amount_vs_Account_type.png)
+![Transaction Amount vs Account Type](output/Transaction_amount_vs_Account_type.png)
 
 ### Average Transaction Amount by Age: To analyze the relationship between `Age` and `Average_Transaction_Amount`.
 
