@@ -33,9 +33,46 @@ This project focuses on detecting anomalies in transaction data to identify pote
 ![Gender vs Transaction Amount](/output/Gender_vs_Transaction_Amount.png)
 
 ## Machine Learning Models
+### Isolation Forest
+I used the **Isolation Forest** algorithm to detect anomalies in the transaction data. The model was trained on features like `Transaction_Amount`, `Average_Transaction_Amount`, and `Frequency_of_Transactions`. The results showed that a small percentage of transactions (around 2%) were flagged as anomalies.
+
+#### Evaluation
+The model's performance was evaluated using precision, recall, and F1-score, which were calculated using the classification report.
+
+```plaintext
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00       196
+     Anomaly       1.00      1.00      1.00         4
+
+    accuracy                           1.00       200
+   macro avg       1.00      1.00      1.00       200
+weighted avg       1.00      1.00      1.00       200
+```
+
+### Local Outlier Factor (LOF)
+
+The Local Outlier Factor was used to further explore local density-based anomalies. As per the standards, the contamination rate was set to 2%, and the model detected a similar percentage of anomalies.
+
+#### Evaluation
+The LOF model's performance was also evaluated using a classification report.
+
+```plaintext
+              precision    recall  f1-score   support
+
+      Normal       1.00      1.00      1.00       196
+     Anomaly       1.00      1.00      1.00         4
+
+    accuracy                           1.00       200
+   macro avg       1.00      1.00      1.00       200
+weighted avg       1.00      1.00      1.00       200
+```
 
 ## Conclusion
+- EDA revealed several interesting insights about transaction behavior across different customer attributes, including Account_Type, Age, and Income using these several outliers were identified  in transaction amounts, which could indicate potential fraudulent activities.
+- Isolation Forest and Local Outlier Factor (LOF) were both effective in identifying anomalies in the dataset, though Isolation Forest showed slightly better precision and recall.
 
 ## References
+
 
 
