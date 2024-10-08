@@ -71,8 +71,12 @@ weighted avg       1.00      1.00      1.00       200
 ## Conclusion
 - EDA revealed several interesting insights about transaction behavior across different customer attributes, including Account_Type, Age, and Income using these several outliers were identified  in transaction amounts, which could indicate potential fraudulent activities.
 - Isolation Forest and Local Outlier Factor (LOF) were both effective in identifying anomalies in the dataset, though Isolation Forest showed slightly better precision and recall.
+- This project builds on the foundational work provided in The Clever Programmer's Anomaly Detection in Transactions using Python by expanding the analysis to provide deeper insights into various other aspects of the anomaly detection.
 
-## References
-
-
-
+## References:
+1. [Isolation Forest](https://scikit-learn.org/1.5/modules/generated/sklearn.ensemble.IsolationForest.html)
+2. [Anomaly Detection using Isolation Forest](https://www.digitalocean.com/community/tutorials/anomaly-detection-isolation-forest)
+3. [Local Outlier Factor](https://scikit-learn.org/dev/modules/generated/sklearn.neighbors.LocalOutlierFactor.html)
+4. [Anomaly Detection using LOF](https://medium.com/@ilyurek/anomaly-detection-with-local-outlier-factor-lof-b1b82227c15e)
+5. [Project Reference](https://thecleverprogrammer.com/2023/08/21/anomaly-detection-in-transactions-using-python/)
+6. [Dataset](https://statso.io/anomaly-detection-case-study/)
